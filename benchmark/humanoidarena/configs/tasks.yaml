@@ -1,0 +1,58 @@
+version: 1
+tasks:
+  kick_football:
+    instruction_key: "1"
+    expected_prompt: Kick the football into the goal.
+    gym_task: Isaac-Move-Football-Single-G129-Dex3-Wholebody
+    env_config: tasks/common_test_config/base_test/football_single_sonic_test.yaml
+    max_steps: 2000
+    denoise_steps: 20
+    replan: 20
+  sit_sofa:
+    instruction_key: "6"
+    expected_prompt: Sit on the sofa.
+    gym_task: Isaac-Move-Sit-Sofa-G129-Dex3-Wholebody
+    env_config: tasks/common_test_config/base_test/sit_sofa_sonic_test.yaml
+    max_steps: 2000
+    denoise_steps: 20
+    replan: 20
+  obstacle_navigation:
+    instruction_key: "7"
+    expected_prompt: Avoid obstacles and move to the yellow marked area.
+    gym_task: Isaac-Move-SmallWarehouse-VisionNavigation-G129-Dex3-Wholebody
+    env_config: tasks/common_test_config/base_test/vision_navi_sonic_test.yaml
+    max_steps: 1800
+    denoise_steps: 40
+    replan: 14
+  hammer:
+    instruction_key: "0"
+    expected_prompt: Put the hammer from the right table into the basket on the left table.
+    gym_task: Isaac-Move-PickPlace-DoubleDesk-G129-Dex3-Wholebody
+    env_config: tasks/common_test_config/base_test/doubledesk_sonic_test.yaml
+    max_steps: 2000
+    denoise_steps: 40
+    replan: 14
+  box_shelf:
+    instruction_key: "3"
+    expected_prompt: Move the box from the table onto the shelf.
+    gym_task: Isaac-Move-PickPlace-Box-G129-Dex3-Wholedoby
+    env_config: tasks/common_test_config/base_test/pp_box_sonic_test.yaml
+    max_steps: 1450
+    denoise_steps: 40
+    replan: 20
+  punch_markers:
+    instruction_key: "4"
+    expected_prompt: Strike the green markers on the punching bag.
+    gym_task: Isaac-Move-Boxing-Bag-G129-Dex3-Wholebody
+    env_config: tasks/common_test_config/base_test/boxing_sonic_test.yaml
+    max_steps: 900
+    denoise_steps: 40
+    replan: 20
+  open_door:
+    instruction_key: "5"
+    expected_prompt: Open the door.
+    gym_task: Isaac-Move-Open-Door-G129-Dex3-Wholebody
+    env_config: tasks/common_test_config/base_test/open_door_sonic_test.yaml
+    max_steps: 1800
+    denoise_steps: 40
+    replan: 20

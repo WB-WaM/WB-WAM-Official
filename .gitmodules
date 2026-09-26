@@ -1,0 +1,6 @@
+[submodule "third_party/GMR"]
+	path = third_party/GMR
+	url = https://github.com/YanjieZe/GMR.git
+[submodule "third_party/HumanoidArena"]
+	path = third_party/HumanoidArena
+	url = https://github.com/RL2-humanoid-VLA/HumanoidArena.git

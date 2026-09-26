@@ -1,0 +1,21 @@
+# Copy to benchmark/humanoidarena/runtime.local.yaml and replace every absolute path.
+runtime_root: /absolute/path/to/writable-wbwam-benchmark-cache
+inference_python: /absolute/path/to/miniconda3/envs/wbwam/bin/python
+humanoidarena_root: /absolute/path/to/WB-WAM/third_party/HumanoidArena
+humanoidarena_assets: /absolute/path/to/WB-WAM/third_party/HumanoidArena/isaaclab_twist2_g1/assets
+dependencies_root: /absolute/path/to/humanoidarena-dependencies
+wbwam_root: /absolute/path/to/WB-WAM/training
+base_models_root: /absolute/path/to/base-models
+
+simulation_backend: native
+simulation_python: /absolute/path/to/miniconda3/envs/unitree_sim_env/bin/python
+isaac_home: /absolute/path/to/writable-wbwam-benchmark-cache/isaac-home
+isaac_cache: /absolute/path/to/writable-wbwam-benchmark-cache/isaac-cache
+sonic_release: /absolute/path/to/sonic-release
+paligemma_root: ""
+
+# One-GPU default. run_all.py overrides these fields from --gpus.
+inference_gpu: "0"
+simulation_gpu: "0"
+allow_shared_gpu: true
+max_preexisting_gpu_mib: 512

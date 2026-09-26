@@ -1,0 +1,43 @@
+[project]
+name = "wuji-retargeting"
+version = "2026.05.26"
+description = "High-precision hand pose retargeting system for WujiHand"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "numpy>=1.21.0",
+    "nlopt",
+    "pin>=3.8.0",
+    "pyyaml",
+    "scipy>=1.11.0",
+    "wuji-sdk>=0.10.0",
+]
+
+[project.optional-dependencies]
+video = [
+    "mediapipe",
+    "opencv-python",
+]
+realsense = [
+    "mediapipe",
+    "opencv-python",
+    "pyrealsense2",
+]
+zed = [
+    "mediapipe",
+    "opencv-python",
+    "pyzed",
+]
+tuning = [
+    "mujoco>=3.6",
+]
+
+[tool.setuptools.packages.find]
+include = ["wuji_retargeting*"]
+
+[tool.setuptools.package-data]
+"wuji_retargeting" = [
+    "urdf/*.urdf",
+    "meshes/**/*.STL",
+]

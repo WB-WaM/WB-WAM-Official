@@ -1,0 +1,11 @@
+numpy>=1.21.0
+wujihandpy
+avp_stream
+mujoco
+pin==3.8.0
+nlopt
+pyyaml
+scipy>=1.11.0
+mediapipe
+opencv-python
+wuji-sdk>=0.10.0

@@ -1,0 +1,58 @@
+# @package _global_
+defaults:
+  - /wb_task/_base/posttrain
+  - override /data: wb_humanoid_arena_native_50hz
+  - _self_
+
+batch_size: 16
+num_epochs: 50
+max_steps: null
+save_every: 1000
+save_final: true
+eval_every: 500
+eval_num_inference_steps: 10
+resume: ${oc.env:WBWAM_PRETRAIN_CHECKPOINT}
+output_dir: ${oc.env:WBWAM_RUNS_ROOT,./runs}/wb_posttrain_humanoid_arena_native50/${posttrain_task}_${now:%Y%m%d-%H%M%S}
+arena_exclude_ranges: []
+
+fk_link_loss:
+  enabled: false
+
+data:
+  archives: null
+  val_set_proportion: 0.05
+  stats_downsample_rate: 1
+  pretrained_norm_stats: null
+  return_fk_targets: false
+  image_augmentation:
+    enabled: true
+  datasets:
+    - name: humanoid_arena_official_native_50hz_${posttrain_task}
+      root: ${oc.env:WBWAM_ARENA_NATIVE50_ROOT}
+      weight: 1.0
+      camera_key: observation.images.front
+      val_split_mode: task_stratified
+      exclude_episode_ranges: ${arena_exclude_ranges}
+      instruction:
+        task_overrides:
+          "0": Put the hammer from the right table into the basket on the left table.
+          "1": Kick the football into the goal.
+          "2": Place the orange drink can on the table into the basket on the tea table.
+          "3": Move the box from the table onto the shelf.
+          "4": Strike the green markers on the punching bag.
+          "5": Open the door.
+          "6": Sit on the sofa.
+          "7": Avoid obstacles and move to the yellow marked area.
+        visual_description: >-
+          The video is recorded at 50 Hz from the head-mounted front camera of a
+          Unitree G1 robot in Humanoid Arena and may show its body and scene.
+        control_description: >-
+          The proprioceptive input is the official 64-dimensional robot state.
+          The predicted motion is the official 40-dimensional native reference
+          action at 50 Hz: root local-XY delta, root height and rotation, twenty-nine
+          reference joint positions, and one binary hand command per side. Values
+          and row alignment are preserved; only fixed model tensor slots differ.
+
+wandb:
+  name: wb_posttrain_humanoid_arena_native50_${posttrain_task}
+  group: wb_posttrain_humanoid_arena_native50

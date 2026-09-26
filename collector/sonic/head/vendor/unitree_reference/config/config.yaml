@@ -1,0 +1,11 @@
+dt: 0.02
+servo0_calibration: 0
+servo1_calibration: 0
+
+joint0: [-50, 50]
+joint1: [-20, 85]
+
+direction: [1, -1]
+
+has_calibrate: 0
+

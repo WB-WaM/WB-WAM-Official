@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="SDKMinimalClient.cpp" />
+    <ClCompile Include="..\SDKClient_Windows\PlatformSpecific\Windows\ClientPlatformSpecific.cpp">
+      <Filter>Platform Specific</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SDKMinimalClient.hpp" />
+    <ClInclude Include="ClientLogging.hpp" />
+    <ClInclude Include="..\SDKClient_Windows\PlatformSpecific\Windows\ClientPlatformSpecificTypes.hpp">
+      <Filter>Platform Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SDKClient_Windows\PlatformSpecific\ClientPlatformSpecific.hpp">
+      <Filter>Platform Specific</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Platform Specific">
+      <UniqueIdentifier>{85bc4dfa-a9a0-4a7e-8789-21a5733dbb90}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

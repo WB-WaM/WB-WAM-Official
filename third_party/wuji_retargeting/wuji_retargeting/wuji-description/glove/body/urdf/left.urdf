@@ -1,0 +1,1000 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="left_hand">
+  <link name="wrist">
+    <visual name="wrist_dot">
+      <geometry>
+        <sphere radius="0.007" />
+      </geometry>
+      <material name="wrist_mat">
+        <color rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <visual name="wrist_palm_0">
+      <origin xyz="0.0102935000 -0.0042200000 -0.0144465000" rpy="2.8573879197 0.5998676456 2.2750209358" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0364672952"/>
+      </geometry>
+      <material name="wrist_palm_0_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+    <visual name="wrist_palm_1">
+      <origin xyz="0.0147170000 0.0029350000 -0.0459585000" rpy="-3.0778172965 0.3093152681 -2.7379532506" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0966930822"/>
+      </geometry>
+      <material name="wrist_palm_1_mat">
+        <color rgba="0.2 0.8 0.2 1" />
+      </material>
+    </visual>
+    <visual name="wrist_palm_2">
+      <origin xyz="0.0037310000 0.0052300000 -0.0447720000" rpy="-3.0253055951 0.0825822770 -1.2344949584" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0904611573"/>
+      </geometry>
+      <material name="wrist_palm_2_mat">
+        <color rgba="0.2 0.2 0.8 1" />
+      </material>
+    </visual>
+    <visual name="wrist_palm_3">
+      <origin xyz="-0.0068560000 0.0038325000 -0.0422145000" rpy="-3.0510545113 -0.1603547409 2.1148604350" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0858779786"/>
+      </geometry>
+      <material name="wrist_palm_3_mat">
+        <color rgba="0.9 0.6 0.1 1" />
+      </material>
+    </visual>
+    <visual name="wrist_palm_4">
+      <origin xyz="-0.0170005000 0.0011345000 -0.0371405000" rpy="-3.1110559796 -0.4290911070 3.0016691795" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0817244353"/>
+      </geometry>
+      <material name="wrist_palm_4_mat">
+        <color rgba="0.7 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="emf_tx_base_fixed" type="fixed">
+    <parent link="wrist" />
+    <child link="emf_tx_base" />
+    <origin xyz="0.0042822931 0.0431191036 -0.0457411035" rpy="-0.1571696386 -0.0352683541 -0.0860339387" />
+  </joint>
+  <link name="emf_tx_base">
+    <visual name="emf_tx_body">
+      <geometry>
+        <mesh filename="../mesh/base_link_TX.STL" />
+      </geometry>
+      <material name="emf_tx_mat">
+        <color rgba="0.82 0.47 0.47 0.85" />
+      </material>
+    </visual>
+  </link>
+  <link name="thumb_metacarpal">
+    <visual name="thumb_metacarpal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="thumb_metacarpal_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thumb_metacarpal_fixed" type="fixed">
+    <parent link="wrist" />
+    <child link="thumb_metacarpal" />
+    <origin xyz="0.0205870000 -0.0084400000 -0.0288930000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="thumb_proximal_rot">
+    <visual name="thumb_proximal_rot_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="thumb_proximal_rot_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thumb_cmc_rot" type="revolute">
+    <parent link="thumb_metacarpal" />
+    <child link="thumb_proximal_rot" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="thumb_proximal_abd">
+    <visual name="thumb_proximal_abd_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="thumb_proximal_abd_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thumb_cmc_flex" type="revolute">
+    <parent link="thumb_proximal_rot" />
+    <child link="thumb_proximal_abd" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="thumb_proximal">
+    <visual name="thumb_proximal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="thumb_proximal_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+    <visual name="thumb_proximal_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0153135175" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0306270349"/>
+      </geometry>
+      <material name="thumb_proximal_line_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thumb_cmc_abd" type="revolute">
+    <parent link="thumb_proximal_abd" />
+    <child link="thumb_proximal" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="thumb_middle">
+    <visual name="thumb_middle_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="thumb_middle_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+    <visual name="thumb_middle_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0266160806" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0532321612"/>
+      </geometry>
+      <material name="thumb_middle_line_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thumb_mcp" type="revolute">
+    <parent link="thumb_proximal" />
+    <child link="thumb_middle" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0306270349" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="thumb_distal">
+    <visual name="thumb_distal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="thumb_distal_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+    <visual name="thumb_distal_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0102949268" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0205898537"/>
+      </geometry>
+      <material name="thumb_distal_line_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thumb_ip" type="revolute">
+    <parent link="thumb_middle" />
+    <child link="thumb_distal" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0532321612" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="thumb_tip">
+    <visual name="thumb_tip_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="thumb_tip_mat">
+        <color rgba="0.8 0.2 0.2 1" />
+      </material>
+    </visual>
+    <visual name="thumb_nail">
+      <origin xyz="0.0000000000 0.0020000000 0.0000000000" rpy="1.5707963268 0.0000000000 0.0000000000" />
+      <geometry>
+        <box size="0.0056 0.009 0.0006" />
+      </geometry>
+      <material name="nail_mat">
+        <color rgba="0.94 0.82 0.75 0.9" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thumb_tip_fixed" type="fixed">
+    <parent link="thumb_distal" />
+    <child link="thumb_tip" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0205898537" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="index_finger_metacarpal">
+    <visual name="index_finger_metacarpal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="index_finger_metacarpal_mat">
+        <color rgba="0.2 0.8 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="index_finger_metacarpal_fixed" type="fixed">
+    <parent link="wrist" />
+    <child link="index_finger_metacarpal" />
+    <origin xyz="0.0294340000 0.0058700000 -0.0919170000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="index_finger_proximal_abd">
+    <visual name="index_finger_proximal_abd_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="index_finger_proximal_abd_mat">
+        <color rgba="0.2 0.8 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="index_finger_mcp_flex" type="revolute">
+    <parent link="index_finger_metacarpal" />
+    <child link="index_finger_proximal_abd" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="index_finger_proximal">
+    <visual name="index_finger_proximal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="index_finger_proximal_mat">
+        <color rgba="0.2 0.8 0.2 1" />
+      </material>
+    </visual>
+    <visual name="index_finger_proximal_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0219801978" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0439603957"/>
+      </geometry>
+      <material name="index_finger_proximal_line_mat">
+        <color rgba="0.2 0.8 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="index_finger_mcp_abd" type="revolute">
+    <parent link="index_finger_proximal_abd" />
+    <child link="index_finger_proximal" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="index_finger_middle">
+    <visual name="index_finger_middle_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="index_finger_middle_mat">
+        <color rgba="0.2 0.8 0.2 1" />
+      </material>
+    </visual>
+    <visual name="index_finger_middle_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0113996876" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0227993752"/>
+      </geometry>
+      <material name="index_finger_middle_line_mat">
+        <color rgba="0.2 0.8 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="index_finger_pip" type="revolute">
+    <parent link="index_finger_proximal" />
+    <child link="index_finger_middle" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0439603957" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="index_finger_distal">
+    <visual name="index_finger_distal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="index_finger_distal_mat">
+        <color rgba="0.2 0.8 0.2 1" />
+      </material>
+    </visual>
+    <visual name="index_finger_distal_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0077668206" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0155336413"/>
+      </geometry>
+      <material name="index_finger_distal_line_mat">
+        <color rgba="0.2 0.8 0.2 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="index_finger_dip" type="revolute">
+    <parent link="index_finger_middle" />
+    <child link="index_finger_distal" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0227993752" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="index_finger_tip">
+    <visual name="index_finger_tip_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="index_finger_tip_mat">
+        <color rgba="0.2 0.8 0.2 1" />
+      </material>
+    </visual>
+    <visual name="index_finger_nail">
+      <origin xyz="0.0000000000 0.0020000000 0.0000000000" rpy="1.5707963268 0.0000000000 0.0000000000" />
+      <geometry>
+        <box size="0.0056 0.009 0.0006" />
+      </geometry>
+      <material name="nail_mat">
+        <color rgba="0.94 0.82 0.75 0.9" />
+      </material>
+    </visual>
+  </link>
+  <joint name="index_finger_tip_fixed" type="fixed">
+    <parent link="index_finger_distal" />
+    <child link="index_finger_tip" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0155336413" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="middle_finger_metacarpal">
+    <visual name="middle_finger_metacarpal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="middle_finger_metacarpal_mat">
+        <color rgba="0.2 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="middle_finger_metacarpal_fixed" type="fixed">
+    <parent link="wrist" />
+    <child link="middle_finger_metacarpal" />
+    <origin xyz="0.0074620000 0.0104600000 -0.0895440000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="middle_finger_proximal_abd">
+    <visual name="middle_finger_proximal_abd_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="middle_finger_proximal_abd_mat">
+        <color rgba="0.2 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="middle_finger_mcp_flex" type="revolute">
+    <parent link="middle_finger_metacarpal" />
+    <child link="middle_finger_proximal_abd" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="middle_finger_proximal">
+    <visual name="middle_finger_proximal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="middle_finger_proximal_mat">
+        <color rgba="0.2 0.2 0.8 1" />
+      </material>
+    </visual>
+    <visual name="middle_finger_proximal_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0248713260" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0497426520"/>
+      </geometry>
+      <material name="middle_finger_proximal_line_mat">
+        <color rgba="0.2 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="middle_finger_mcp_abd" type="revolute">
+    <parent link="middle_finger_proximal_abd" />
+    <child link="middle_finger_proximal" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="middle_finger_middle">
+    <visual name="middle_finger_middle_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="middle_finger_middle_mat">
+        <color rgba="0.2 0.2 0.8 1" />
+      </material>
+    </visual>
+    <visual name="middle_finger_middle_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0143893039" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0287786078"/>
+      </geometry>
+      <material name="middle_finger_middle_line_mat">
+        <color rgba="0.2 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="middle_finger_pip" type="revolute">
+    <parent link="middle_finger_proximal" />
+    <child link="middle_finger_middle" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0497426520" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="middle_finger_distal">
+    <visual name="middle_finger_distal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="middle_finger_distal_mat">
+        <color rgba="0.2 0.2 0.8 1" />
+      </material>
+    </visual>
+    <visual name="middle_finger_distal_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0095994428" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0191988856"/>
+      </geometry>
+      <material name="middle_finger_distal_line_mat">
+        <color rgba="0.2 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="middle_finger_dip" type="revolute">
+    <parent link="middle_finger_middle" />
+    <child link="middle_finger_distal" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0287786078" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="middle_finger_tip">
+    <visual name="middle_finger_tip_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="middle_finger_tip_mat">
+        <color rgba="0.2 0.2 0.8 1" />
+      </material>
+    </visual>
+    <visual name="middle_finger_nail">
+      <origin xyz="0.0000000000 0.0020000000 0.0000000000" rpy="1.5707963268 0.0000000000 0.0000000000" />
+      <geometry>
+        <box size="0.0056 0.009 0.0006" />
+      </geometry>
+      <material name="nail_mat">
+        <color rgba="0.94 0.82 0.75 0.9" />
+      </material>
+    </visual>
+  </link>
+  <joint name="middle_finger_tip_fixed" type="fixed">
+    <parent link="middle_finger_distal" />
+    <child link="middle_finger_tip" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0191988856" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="ring_finger_metacarpal">
+    <visual name="ring_finger_metacarpal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="ring_finger_metacarpal_mat">
+        <color rgba="0.9 0.6 0.1 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="ring_finger_metacarpal_fixed" type="fixed">
+    <parent link="wrist" />
+    <child link="ring_finger_metacarpal" />
+    <origin xyz="-0.0137120000 0.0076650000 -0.0844290000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="ring_finger_proximal_abd">
+    <visual name="ring_finger_proximal_abd_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="ring_finger_proximal_abd_mat">
+        <color rgba="0.9 0.6 0.1 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="ring_finger_mcp_flex" type="revolute">
+    <parent link="ring_finger_metacarpal" />
+    <child link="ring_finger_proximal_abd" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="ring_finger_proximal">
+    <visual name="ring_finger_proximal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="ring_finger_proximal_mat">
+        <color rgba="0.9 0.6 0.1 1" />
+      </material>
+    </visual>
+    <visual name="ring_finger_proximal_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0224375392" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0448750783"/>
+      </geometry>
+      <material name="ring_finger_proximal_line_mat">
+        <color rgba="0.9 0.6 0.1 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="ring_finger_mcp_abd" type="revolute">
+    <parent link="ring_finger_proximal_abd" />
+    <child link="ring_finger_proximal" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="ring_finger_middle">
+    <visual name="ring_finger_middle_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="ring_finger_middle_mat">
+        <color rgba="0.9 0.6 0.1 1" />
+      </material>
+    </visual>
+    <visual name="ring_finger_middle_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0136807570" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0273615140"/>
+      </geometry>
+      <material name="ring_finger_middle_line_mat">
+        <color rgba="0.9 0.6 0.1 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="ring_finger_pip" type="revolute">
+    <parent link="ring_finger_proximal" />
+    <child link="ring_finger_middle" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0448750783" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="ring_finger_distal">
+    <visual name="ring_finger_distal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="ring_finger_distal_mat">
+        <color rgba="0.9 0.6 0.1 1" />
+      </material>
+    </visual>
+    <visual name="ring_finger_distal_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0092937319" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0185874637"/>
+      </geometry>
+      <material name="ring_finger_distal_line_mat">
+        <color rgba="0.9 0.6 0.1 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="ring_finger_dip" type="revolute">
+    <parent link="ring_finger_middle" />
+    <child link="ring_finger_distal" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0273615140" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="ring_finger_tip">
+    <visual name="ring_finger_tip_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="ring_finger_tip_mat">
+        <color rgba="0.9 0.6 0.1 1" />
+      </material>
+    </visual>
+    <visual name="ring_finger_nail">
+      <origin xyz="0.0000000000 0.0020000000 0.0000000000" rpy="1.5707963268 0.0000000000 0.0000000000" />
+      <geometry>
+        <box size="0.0056 0.009 0.0006" />
+      </geometry>
+      <material name="nail_mat">
+        <color rgba="0.94 0.82 0.75 0.9" />
+      </material>
+    </visual>
+  </link>
+  <joint name="ring_finger_tip_fixed" type="fixed">
+    <parent link="ring_finger_distal" />
+    <child link="ring_finger_tip" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0185874637" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="pinky_metacarpal">
+    <visual name="pinky_metacarpal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="pinky_metacarpal_mat">
+        <color rgba="0.7 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="pinky_metacarpal_fixed" type="fixed">
+    <parent link="wrist" />
+    <child link="pinky_metacarpal" />
+    <origin xyz="-0.0340010000 0.0022690000 -0.0742810000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="pinky_proximal_abd">
+    <visual name="pinky_proximal_abd_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="pinky_proximal_abd_mat">
+        <color rgba="0.7 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="pinky_mcp_flex" type="revolute">
+    <parent link="pinky_metacarpal" />
+    <child link="pinky_proximal_abd" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="pinky_proximal">
+    <visual name="pinky_proximal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="pinky_proximal_mat">
+        <color rgba="0.7 0.2 0.8 1" />
+      </material>
+    </visual>
+    <visual name="pinky_proximal_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0138787012" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0277574023"/>
+      </geometry>
+      <material name="pinky_proximal_line_mat">
+        <color rgba="0.7 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="pinky_mcp_abd" type="revolute">
+    <parent link="pinky_proximal_abd" />
+    <child link="pinky_proximal" />
+    <origin xyz="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="pinky_middle">
+    <visual name="pinky_middle_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="pinky_middle_mat">
+        <color rgba="0.7 0.2 0.8 1" />
+      </material>
+    </visual>
+    <visual name="pinky_middle_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0099825149" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0199650297"/>
+      </geometry>
+      <material name="pinky_middle_line_mat">
+        <color rgba="0.7 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="pinky_pip" type="revolute">
+    <parent link="pinky_proximal" />
+    <child link="pinky_middle" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0277574023" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="pinky_distal">
+    <visual name="pinky_distal_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="pinky_distal_mat">
+        <color rgba="0.7 0.2 0.8 1" />
+      </material>
+    </visual>
+    <visual name="pinky_distal_line">
+      <origin xyz="0.0000000000 0.0000000000 -0.0084902615" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <cylinder radius="0.0015" length="0.0169805230"/>
+      </geometry>
+      <material name="pinky_distal_line_mat">
+        <color rgba="0.7 0.2 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="pinky_dip" type="revolute">
+    <parent link="pinky_middle" />
+    <child link="pinky_distal" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0199650297" rpy="0.0000000000 0.0000000000 0.0000000000" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1415926536" upper="3.1415926536" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="pinky_tip">
+    <visual name="pinky_tip_dot">
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="pinky_tip_mat">
+        <color rgba="0.7 0.2 0.8 1" />
+      </material>
+    </visual>
+    <visual name="pinky_nail">
+      <origin xyz="0.0000000000 0.0020000000 0.0000000000" rpy="1.5707963268 0.0000000000 0.0000000000" />
+      <geometry>
+        <box size="0.0056 0.009 0.0006" />
+      </geometry>
+      <material name="nail_mat">
+        <color rgba="0.94 0.82 0.75 0.9" />
+      </material>
+    </visual>
+  </link>
+  <joint name="pinky_tip_fixed" type="fixed">
+    <parent link="pinky_distal" />
+    <child link="pinky_tip" />
+    <origin xyz="0.0000000000 0.0000000000 -0.0169805230" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="thumb_rx_coil">
+    <visual name="thumb_rx_coil_body">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <mesh filename="../mesh/base_link_RX.STL" />
+      </geometry>
+      <material name="thumb_rx_coil_mat">
+        <color rgba="0.82 0.47 0.47 0.85" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thumb_rx_coil_fixed" type="fixed">
+    <parent link="thumb_tip" />
+    <child link="thumb_rx_coil" />
+    <origin xyz="-0.0003476520 0.0077175137 0.0297824565" rpy="-0.0322016932 0.0218222199 0.0197032263" />
+  </joint>
+  <link name="index_rx_coil">
+    <visual name="index_rx_coil_body">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <mesh filename="../mesh/base_link_RX.STL" />
+      </geometry>
+      <material name="index_rx_coil_mat">
+        <color rgba="0.82 0.47 0.47 0.85" />
+      </material>
+    </visual>
+  </link>
+  <joint name="index_rx_coil_fixed" type="fixed">
+    <parent link="index_finger_tip" />
+    <child link="index_rx_coil" />
+    <origin xyz="0.0020936245 0.0038219314 0.0180721919" rpy="-0.0214623677 0.0152790629 -0.1239839311" />
+  </joint>
+  <link name="middle_rx_coil">
+    <visual name="middle_rx_coil_body">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <mesh filename="../mesh/base_link_RX.STL" />
+      </geometry>
+      <material name="middle_rx_coil_mat">
+        <color rgba="0.82 0.47 0.47 0.85" />
+      </material>
+    </visual>
+  </link>
+  <joint name="middle_rx_coil_fixed" type="fixed">
+    <parent link="middle_finger_tip" />
+    <child link="middle_rx_coil" />
+    <origin xyz="0.0001245765 0.0037312769 0.0164102839" rpy="-0.0300473741 0.0042126320 0.0852195574" />
+  </joint>
+  <link name="ring_rx_coil">
+    <visual name="ring_rx_coil_body">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <mesh filename="../mesh/base_link_RX.STL" />
+      </geometry>
+      <material name="ring_rx_coil_mat">
+        <color rgba="0.82 0.47 0.47 0.85" />
+      </material>
+    </visual>
+  </link>
+  <joint name="ring_rx_coil_fixed" type="fixed">
+    <parent link="ring_finger_tip" />
+    <child link="ring_rx_coil" />
+    <origin xyz="-0.0007111768 0.0060517340 0.0131324639" rpy="0.0136775637 -0.0080508460 0.0621100619" />
+  </joint>
+  <link name="pinky_rx_coil">
+    <visual name="pinky_rx_coil_body">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <mesh filename="../mesh/base_link_RX.STL" />
+      </geometry>
+      <material name="pinky_rx_coil_mat">
+        <color rgba="0.82 0.47 0.47 0.85" />
+      </material>
+    </visual>
+  </link>
+  <joint name="pinky_rx_coil_fixed" type="fixed">
+    <parent link="pinky_tip" />
+    <child link="pinky_rx_coil" />
+    <origin xyz="-0.0003759664 0.0100000000 0.0157853565" rpy="-0.0185618574 0.0083490071 0.0818186259" />
+  </joint>
+  <link name="thumb_fingerpad_cp">
+    <visual name="thumb_fingerpad_cp_dot">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <sphere radius="0.0030000000" />
+      </geometry>
+      <material name="thumb_fingerpad_cp_mat">
+        <color rgba="1 0.6 0 0.85" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thumb_fingerpad_cp_fixed" type="fixed">
+    <parent link="thumb_tip" />
+    <child link="thumb_fingerpad_cp" />
+    <origin xyz="0.0000000000 -0.0050000000 0.0020000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="thumb_fingertip_cp">
+    <visual name="thumb_fingertip_cp_dot">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <sphere radius="0.0030000000" />
+      </geometry>
+      <material name="thumb_fingertip_cp_mat">
+        <color rgba="1 1 0 0.9" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thumb_fingertip_cp_fixed" type="fixed">
+    <parent link="thumb_tip" />
+    <child link="thumb_fingertip_cp" />
+    <origin xyz="0.0000000000 -0.0020000000 -0.0020000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="index_fingerpad_cp">
+    <visual name="index_fingerpad_cp_dot">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <sphere radius="0.0030000000" />
+      </geometry>
+      <material name="index_fingerpad_cp_mat">
+        <color rgba="1 0.6 0 0.85" />
+      </material>
+    </visual>
+  </link>
+  <joint name="index_fingerpad_cp_fixed" type="fixed">
+    <parent link="index_finger_tip" />
+    <child link="index_fingerpad_cp" />
+    <origin xyz="0.0000000000 -0.0050000000 0.0020000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="index_fingertip_cp">
+    <visual name="index_fingertip_cp_dot">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <sphere radius="0.0030000000" />
+      </geometry>
+      <material name="index_fingertip_cp_mat">
+        <color rgba="1 1 0 0.9" />
+      </material>
+    </visual>
+  </link>
+  <joint name="index_fingertip_cp_fixed" type="fixed">
+    <parent link="index_finger_tip" />
+    <child link="index_fingertip_cp" />
+    <origin xyz="0.0000000000 -0.0020000000 -0.0020000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="middle_fingerpad_cp">
+    <visual name="middle_fingerpad_cp_dot">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <sphere radius="0.0030000000" />
+      </geometry>
+      <material name="middle_fingerpad_cp_mat">
+        <color rgba="1 0.6 0 0.85" />
+      </material>
+    </visual>
+  </link>
+  <joint name="middle_fingerpad_cp_fixed" type="fixed">
+    <parent link="middle_finger_tip" />
+    <child link="middle_fingerpad_cp" />
+    <origin xyz="0.0000000000 -0.0050000000 0.0020000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="middle_fingertip_cp">
+    <visual name="middle_fingertip_cp_dot">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <sphere radius="0.0030000000" />
+      </geometry>
+      <material name="middle_fingertip_cp_mat">
+        <color rgba="1 1 0 0.9" />
+      </material>
+    </visual>
+  </link>
+  <joint name="middle_fingertip_cp_fixed" type="fixed">
+    <parent link="middle_finger_tip" />
+    <child link="middle_fingertip_cp" />
+    <origin xyz="0.0000000000 -0.0020000000 -0.0020000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="ring_fingerpad_cp">
+    <visual name="ring_fingerpad_cp_dot">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <sphere radius="0.0030000000" />
+      </geometry>
+      <material name="ring_fingerpad_cp_mat">
+        <color rgba="1 0.6 0 0.85" />
+      </material>
+    </visual>
+  </link>
+  <joint name="ring_fingerpad_cp_fixed" type="fixed">
+    <parent link="ring_finger_tip" />
+    <child link="ring_fingerpad_cp" />
+    <origin xyz="0.0000000000 -0.0050000000 0.0020000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="ring_fingertip_cp">
+    <visual name="ring_fingertip_cp_dot">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <sphere radius="0.0030000000" />
+      </geometry>
+      <material name="ring_fingertip_cp_mat">
+        <color rgba="1 1 0 0.9" />
+      </material>
+    </visual>
+  </link>
+  <joint name="ring_fingertip_cp_fixed" type="fixed">
+    <parent link="ring_finger_tip" />
+    <child link="ring_fingertip_cp" />
+    <origin xyz="0.0000000000 -0.0020000000 -0.0020000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="pinky_fingerpad_cp">
+    <visual name="pinky_fingerpad_cp_dot">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <sphere radius="0.0030000000" />
+      </geometry>
+      <material name="pinky_fingerpad_cp_mat">
+        <color rgba="1 0.6 0 0.85" />
+      </material>
+    </visual>
+  </link>
+  <joint name="pinky_fingerpad_cp_fixed" type="fixed">
+    <parent link="pinky_tip" />
+    <child link="pinky_fingerpad_cp" />
+    <origin xyz="0.0000000000 -0.0050000000 0.0020000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+  <link name="pinky_fingertip_cp">
+    <visual name="pinky_fingertip_cp_dot">
+      <origin xyz="0.0000000000 0.0000000000 0.0000000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+      <geometry>
+        <sphere radius="0.0030000000" />
+      </geometry>
+      <material name="pinky_fingertip_cp_mat">
+        <color rgba="1 1 0 0.9" />
+      </material>
+    </visual>
+  </link>
+  <joint name="pinky_fingertip_cp_fixed" type="fixed">
+    <parent link="pinky_tip" />
+    <child link="pinky_fingertip_cp" />
+    <origin xyz="0.0000000000 -0.0020000000 -0.0020000000" rpy="0.0000000000 0.0000000000 0.0000000000" />
+  </joint>
+</robot>

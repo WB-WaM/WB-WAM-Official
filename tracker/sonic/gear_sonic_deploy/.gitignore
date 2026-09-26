@@ -1,0 +1,12 @@
+# Ignore GitHub workflows and CI/CD files
+.github/
+
+build/
+target/
+logs/
+*.trt
+
+!thirdparty/wujihandcpp/include/wujihandcpp/data/
+!thirdparty/wujihandcpp/include/wujihandcpp/data/**
+!thirdparty/wujihandcpp/src/data/
+!thirdparty/wujihandcpp/src/data/**

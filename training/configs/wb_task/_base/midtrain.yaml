@@ -1,0 +1,50 @@
+# @package _global_
+
+defaults:
+  - override /data: wb
+  - override /model: wbwam_optional_idm
+  - _self_
+
+batch_size: 24
+num_workers: 8
+num_epochs: 10
+max_steps: null
+log_every: 50
+save_every: 5000
+save_final: true
+eval_every: 0
+eval_at_start: false
+
+learning_rate: 1.0e-4
+lr_scheduler_type: cosine
+gradient_accumulation_steps: 1
+weight_decay: 1.0e-2
+resume: null
+
+data:
+  val_set_proportion: 0.0
+  stats_downsample_rate: 10
+  image_augmentation:
+    enabled: false
+  archives:
+    - name: pico
+      root: ${oc.env:WB_WAM_PICO_ROOT,${data.archive_root}/pico_archive}
+      camera_key: observation.images.stereo_left
+      weight: 1.0
+      instruction:
+        visual_description: >-
+          The video is recorded from a human first-person perspective using a
+          Pico headset and shows everyday interactions.
+        control_description: >-
+          The predicted motion is retargeted to the Unitree G1 body using
+          twenty-nine body joint positions plus root roll, root pitch, and yaw
+          angular velocity, and to two Wuji dexterous hands using twenty joint
+          positions per side.
+
+wandb:
+  enabled: true
+  workspace: null
+  project: wbwam-wb
+  name: wb_midtrain
+  group: wb_midtrain
+  mode: online

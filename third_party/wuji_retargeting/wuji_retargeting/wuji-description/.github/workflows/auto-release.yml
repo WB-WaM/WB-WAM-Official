@@ -1,0 +1,25 @@
+name: Auto Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Auto Release from CHANGELOG
+        uses: wuji-technology/.github/actions/auto-release@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: false
+          feishu-webhook: ${{ secrets.FEISHU_RELEASE_WEBHOOK }}

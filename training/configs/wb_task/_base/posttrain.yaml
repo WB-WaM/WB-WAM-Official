@@ -1,0 +1,68 @@
+# @package _global_
+
+defaults:
+  - override /data: wb
+  - override /model: wbwam_optional_idm
+  - _self_
+
+posttrain_task: null
+
+batch_size: 16
+num_workers: 8
+num_epochs: 50
+max_steps: null
+log_every: 10
+save_every: 1000
+save_final: true
+eval_every: 500
+eval_at_start: false
+
+learning_rate: 1.0e-4
+lr_scheduler_type: cosine
+gradient_accumulation_steps: 1
+weight_decay: 1.0e-2
+resume: null
+
+fk_link_loss:
+  enabled: true
+  weight: 0.05
+  position_scale: 0.3
+  orientation_weight: 1.0
+  orientation_scale: 0.4
+  group_weights:
+    upper: 1.0
+    lower: 1.0
+    torso: 1.0
+
+data:
+  val_set_proportion: 0.05
+  stats_downsample_rate: 1
+  return_fk_targets: ${fk_link_loss.enabled}
+  image_augmentation:
+    enabled: true
+  archives:
+    - name: real
+      root: ${oc.env:WB_WAM_REAL_ROOT,${data.archive_root}/real_archive}
+      include_tasks:
+        - ${posttrain_task}
+      camera_key: observation.images.primary
+      weight: 1.0
+      val_split_mode: task_stratified
+      fk_joint_space: isaaclab_delta
+      instruction:
+        visual_description: >-
+          The video is recorded from the point of view of a Unitree G1 robot and
+          may show its arms, Wuji dexterous hands, and the surrounding scene.
+        control_description: >-
+          The predicted motion controls the Unitree G1 body using twenty-nine
+          body joint positions plus root roll, root pitch, and yaw angular
+          velocity, and two Wuji dexterous hands using twenty joint positions
+          per side.
+
+wandb:
+  enabled: true
+  workspace: null
+  project: wbwam-wb
+  name: wb_posttrain_${posttrain_task}
+  group: wb_posttrain
+  mode: online

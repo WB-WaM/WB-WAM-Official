@@ -1,0 +1,31 @@
+defaults:
+  - wb
+  - _self_
+
+dataset_format: official_lerobot_v3_1
+raw_state_dim: 64
+raw_action_dim: 40
+state_dim: 64
+action_dim: 40
+proprio_dim: 96
+action_target_dim: 96
+state_key: observation.state
+action_key: action
+state_mask_key: null
+action_mask_key: null
+state_slices: null
+action_slices: null
+model_dim_indices: null
+state_model_dim_indices: [61, 62, 63, 64, 65, 66, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95]
+action_model_dim_indices: [72, 73, 74, 75, 76, 77, 78, 79, 80, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 52]
+action_representation: native
+relative_joint_ranges: []
+relative_action_reference: observation
+num_frames: 33
+action_video_freq_ratio: 4
+camera_key: observation.images.front
+stats_downsample_rate: 1
+bad_episodes_path: null
+pretrained_norm_stats: null
+archives: null
+datasets: []

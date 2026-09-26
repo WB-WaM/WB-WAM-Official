@@ -1,0 +1,9 @@
+int32 glove_id
+string side
+int32 raw_node_count
+ManusRawNode[] raw_nodes
+int32 ergonomics_count
+ManusErgonomics[] ergonomics
+geometry_msgs/Quaternion raw_sensor_orientation
+int32 raw_sensor_count
+geometry_msgs/Pose[] raw_sensor

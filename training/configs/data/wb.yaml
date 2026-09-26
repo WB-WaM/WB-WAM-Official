@@ -1,0 +1,84 @@
+_target_: wbwam.datasets.wb_dataset.WBMixtureDataset
+_recursive_: false
+
+# Directory containing the extracted pico_archive/ and real_archive/ folders.
+archive_root: ${oc.env:WB_WAM_DATA_ROOT,./data}
+bad_episodes_path: null
+
+# Select the 72 supervised semantic dimensions from the sealed 110D/136D layout.
+raw_state_dim: 110
+raw_action_dim: 136
+state_dim: 72
+action_dim: 72
+proprio_dim: 96
+action_target_dim: 96
+model_dim_indices: null
+state_slices:
+  - states[9:38] # 29D G1 body qpos
+  - states[107:110] # root roll, root pitch, yaw angular velocity
+  - states[67:87] # left Wuji hand qpos
+  - states[87:107] # right Wuji hand qpos
+action_slices:
+  - action[104:133] # next 29D G1 body qpos
+  - action[133:136] # next root roll, root pitch, yaw angular velocity
+  - action[64:84] # next left Wuji hand qpos
+  - action[84:104] # next right Wuji hand qpos
+
+action_representation: absolute
+relative_joint_ranges: []
+relative_action_reference: observation
+
+num_frames: 33
+action_video_freq_ratio: 4
+video_size: [224, 224]
+camera_key: observation.images.stereo_left
+image_augmentation:
+  enabled: false
+  random_resized_crop:
+    probability: 1.0
+    scale: [0.9, 1.0]
+    ratio: [0.95, 1.05]
+  color_jitter:
+    probability: 0.8
+    brightness: 0.1
+    contrast: 0.1
+    saturation: 0.1
+    hue: 0.02
+  low_light_noise:
+    probability: 0.25
+    exposure: [0.9, 1.0]
+    gamma: [1.0, 1.2]
+    shot_noise_peak: [2048.0, 8192.0]
+    read_noise_std: [0.0, 0.006]
+val_set_proportion: 0.0
+is_training_set: true
+pretrained_norm_stats: null
+
+compute_norm_stats: true
+norm_default_mode: q01/q99
+use_stepwise_action_norm: true
+norm_exception_mode: null
+norm_missing_key_mode: error
+dummy_clip_default: [-5.0, 5.0]
+norm_tail_scale: 0.075
+stats_downsample_rate: 10
+
+use_weight_normalization: true
+use_weight_for_sampling: false
+
+text_embedding_cache_dir: ${oc.env:WBWAM_TEXT_CACHE_ROOT,./text_embeds_cache}/wan22_umt5_xxl/wb_v3_224/ctx192_wbopensourcev1
+text_embedding_cache_suffix: wan22ti2v5b_wbopensourcev1
+use_text_embed_cache: true
+context_len: 192
+instruction_template: |-
+  The task is: {task}
+  {visual_description}
+  {control_description}
+override_instruction: null
+
+video_backend: null
+tolerance_s: null
+shard_cache_size: 2
+strict_video_decode: false
+
+# The selected archive is supplied by the canonical midtrain/posttrain preset.

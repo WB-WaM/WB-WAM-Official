@@ -1,0 +1,5 @@
+# @package _global_
+
+defaults:
+  - /wb_task/_base/midtrain
+  - _self_

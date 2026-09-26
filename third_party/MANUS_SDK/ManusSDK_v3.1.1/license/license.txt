@@ -1,0 +1,276 @@
+Manus Software License Agreement
+
+This Manus Software License Agreement (the “Agreement”) is between you and the Manus entity that owns the Software that you are accessing or using (“Manus” or “we”). If you are agreeing to this Agreement not as an individual but on behalf of your company, government, or other entity for which you are acting (for example, as an employee or governmental official), then “you” means your entity and you are binding your entity to this Agreement. Manus may modify this Agreement from time to time, subject to the terms in Section 21 (Changes to this Agreement) below. 
+The “Effective Date” of this Agreement is the date which is the earlier of (a) your initial access to or use of the Software (as defined below) or (b) the effective date of the first Order referencing this Agreement.
+By clicking on the “I agree” (or similar button or checkbox) that is presented to you at the time of your Order, or by using or accessing the Software, you indicate your assent to be bound by this Agreement.  If you do not agree to this Agreement, do not use or access the Software.
+
+
+1. Scope of Agreement. 
+
+This Agreement governs your initial purchase of Manus’s Software, Support and Maintenance for the Software, and any Additional Services, as well as any future purchases made by you that reference this Agreement.  This Agreement includes each Order, the Manus Policies, the Product-Specific Terms, and any other referenced policies and terms.  The Software and its permitted use are further described in the Documentation.  The term “Software” includes Documentation unless otherwise specified.
+ 
+ 
+2. Accounts and Authorized Users
+
+2.1. Account Registration. 
+You must register for an account with us in order to place Orders or access or receive Software. Your registration information must be accurate, current and complete. If you order Software through a Reseller (defined in Section 7.8), then you are solely responsible for (i) any access by Reseller to your account and (ii) any related rights or obligations in your applicable agreement with the Reseller.
+
+2.2. Authorized Users. 
+Only Authorized Users may access and use the Software. All use of Software must be solely for the benefit of you or your Affiliates and must be within the Scope of Use.
+
+
+3. Use of the Software
+
+3.1. Your License Rights. 
+Subject to the terms and conditions of this Agreement, Manus grants you a non-exclusive, non-sublicensable and non-transferable license to install and use the Software during the applicable License Term for your own business purposes, in accordance with this Agreement, your applicable Scope of Use, the Documentation and all Laws.
+
+3.2. Grant. 
+Subject to the terms of this Agreement, Manus hereby grants you a non-exclusive, non-transferable license,
+without the right to sublicense (except as expressly provided in this Agreement) to:
+(i) Install and use the Software,
+(ii) Modify and create derivative works of sample source code delivered in the portions of the Software marked as Distributable, and
+(iii) Distribute those portions of the Software that are identified in this Agreement as distributable, as incorporated
+in object code format into a software application that meets the distribution requirements indicated in this
+Agreement.
+
+Distribution. The following portions of the Software are distributable under the Agreement in applications
+developed for authorized platforms only, as described in the documentation provided by Manus: any software or
+materials within the Software.
+
+Distributable
+Manus Unity plug-in
+Manus Unreal plug-in
+Manus CoreSDK
+
+3.3. Product-Specific Terms. 
+Some Software may be subject to additional terms specific to that Software as set forth in the Product-Specific Terms.  By accessing or using a product covered by the Product-Specific Terms, you agree to the Product-Specific Terms.
+
+3.4. Distribution Requirements 
+These are the distribution requirements for you to exercise the distribution grant:
+
+(i) Your application must have material additional functionality, beyond the included portions of the Software.
+(ii)The distributable portions of the Software shall only be accessed by your application.
+(iii) The following notice shall be included in modifications and derivative works of sample source code distributed: “This software contains source code provided by Manus Technology Group B.V.”
+(iv) Unless a developer tool is identified in this Agreement as distributable, it is delivered for your internal use only.
+(v) The terms under which you distribute your application must be consistent with the terms of this Agreement, including (without limitation) terms relating to the license grant and license restrictions and protection of Manus's intellectual property rights. Additionally, you agree that you will protect the privacy, security and legal rights of your application users.
+(vi) You agree to notify Manus in writing of any known or suspected distribution or use of the Software not in compliance with the requirements of this Agreement, and to enforce the terms of your agreements with respect to distributed Software.
+
+3.5. Attribution. 
+In any use of the Software, you must not remove, obscure, or alter in any way the following attribution to Manus on all user interfaces to the Software: “Powered by Manus” or anything related to the brand identity of Manus.
+
+3.6. System Requirements. 
+You are solely responsible for ensuring that your systems meet the hardware, software and any other applicable system requirements for the Software as specified in the Documentation.  Manus will have no obligations or responsibility under this Agreement for issues caused by your use of any third-party hardware or software not provided by Manus.
+
+3.7. Indemnification by You. 
+You will defend, indemnify and hold harmless Manus from and against any loss, cost, liability or damage (including attorney’s fees) arising from or relating to any claim brought against Manus (a) arising from or related to your breach or any claims or disputes brought by Secondary Users arising out of their use of the Software; (b) by a third party relating to Your Modifications (including but not limited to any representations or warranties you make about Your Modifications of the Software) or your breach of Section 3.4 (Your Modifications); (c) by a third party related to your Customer Materials; or (d) by a third party relating to any non-Manus content or data used by you in connection with the Software.  This indemnification obligation is subject to your receiving (i) prompt written notice of such claim (but in any event notice in sufficient time for you to respond without prejudice); (ii) the exclusive right to control and direct the investigation, defense, or settlement of such claim; and (iii) all reasonably necessary cooperation of Manus at your expense.
+
+
+4. Third-Party Products.
+
+You (including your Authorized Users) may choose to use or procure other third-party products or services in connection with the Software or implementation, customization, training or other services. Your receipt or use of any third-party products or services is subject to a separate agreement between you and the third-party provider. If you enable or use third-party products or services with the Software, you acknowledge that the third-party providers may access or use your data as required for the interoperation of their products and services with the Software. This may include transmitting, transferring, modifying or deleting your data, or storing your data on systems belonging to the third-party providers or other third parties.  Any third-party provider’s use of your data is subject to the applicable agreement between you and such third-party provider.  We are not responsible for any access to or use of your data by third-party providers or their products or services, or for the security or privacy practices of any third-party provider or its products or services.  You are solely responsible for your decision to permit any third-party provider or third-party product or service to use your data.  It is your responsibility to carefully review the agreement between you and the third-party provider, as provided by the applicable third-party provider.  MANUS DISCLAIMS ALL LIABILITY AND RESPONSIBILITY FOR ANY THIRD-PARTY PRODUCTS OR SERVICES (WHETHER SUPPORT, AVAILABILITY, SECURITY OR OTHERWISE) OR FOR THE ACTS OR OMISSIONS OF ANY THIRD-PARTY PROVIDERS OR VENDORS.
+
+
+5. Privacy Terms. 
+
+To improve it’s products Manus may collect certain data and information from you regarding the use of the Software and otherwise in connection with this Agreement.  All such data and information will be collected and used by Manus in accordance with Manus’s Privacy Policy, which you acknowledge.  You may disable data collection by the Software through the settings in the Software.
+
+
+6. Manus Commitments
+
+6.1. Support and Maintenance. 
+During the period for which you have paid the applicable Support and Maintenance fee, Manus will provide Support and Maintenance for the Software in accordance with the Manus Support Policy.  Support and Maintenance for Software includes access to New Releases, if and when available.
+
+
+7. License Term, Returns and Payment
+
+7.1. License Term and Renewals. 
+The License Term, Support and Maintenance period, and Service period will be indicated in the Order (as applicable).  The License Term and any applicable service periods will commence on the Order date (unless a different start date is designated in the Order) and expire on the expiration date indicated in your account. Unless earlier terminated in accordance with this Agreement, each right to use Software will expire at the end of the applicable License Term.  You agree that the License will be automatically renewed for twelve (12) months unless you provide us with a note of termination of the agreement at least one (1) month prior to the end date of the License Term as indicated on your order or in your account. All renewals are subject to the applicable Software or Support and Maintenance continuing to be offered and will be charged at the then-current rates.
+
+7.2. Delivery. 
+We will deliver the applicable license keys to your account when Manus or the distributor have received payment of the applicable fees. All deliveries under this Agreement will be electronic. You are responsible for installation of the Software, and you acknowledge that Manus has no further delivery obligation with respect to the Software after delivery of the license keys.
+
+7.3. Payment. 
+You will pay all fees in accordance with each Order, by the due dates and in the currency specified in the Order.  If a purchase order number is required in order for an invoice to be paid, then you must provide such purchase order number to Manus by emailing the purchase order number to sales@manus-vr.com. All amounts are non-refundable, non-cancelable and non-creditable. You agree that we may bill your credit card or other payment method for renewals, additional users, expenses and unpaid fees, as applicable.
+
+7.4. Taxes. 
+Your fees under this Agreement exclude any taxes or duties payable in respect of the Software in the jurisdiction where the payment is either made or received. To the extent that any such taxes or duties are payable by Manus, you must pay to Manus the amount of such taxes or duties in addition to any fees owed under this Agreement. Notwithstanding the foregoing, you may have obtained an exemption from relevant taxes or duties as of the time such taxes or duties are levied or assessed. In that case, you will have the right to provide to Manus any such exemption information, and Manus will use reasonable efforts to provide such invoicing documents as may enable you to obtain a refund or credit for the amount so paid from any relevant revenue authority if such a refund or credit is available.
+
+7.5. Withholding Taxes. 
+You will pay all fees net of any applicable withholding taxes. 
+
+7.6. Reseller Orders. 
+This only applies if you purchase the Software, Support and Maintenance or any Additional Services through an authorized partner or reseller of Manus (“Reseller”).
+(a) Instead of paying Manus, you will pay the applicable amounts to the Reseller, as agreed between you and the Reseller.  Manus may suspend or terminate your rights to use Software if Manus does not receive the corresponding payment from the Reseller.
+(b) Instead of an Order with Manus, your order details (e.g., Software, Scope of Use and License Term) will be as stated in the order placed with Manus by the Reseller on your behalf, and the Reseller is responsible for the accuracy of any such order as communicated to Manus.
+(c) Resellers are not authorized to modify this Agreement or make any promises or commitments on Manus’s behalf, and Manus is not bound by any obligations to you other than as set forth in this Agreement.
+(d) The amount paid or payable by the Reseller to us for your use of the applicable Software under this Agreement will be deemed the amount actually paid or payable by you to us under this Agreement for purposes of calculating the liability cap in Section 15.2 (Liability Cap).
+
+
+8. No-Charge Software. 
+
+We may offer certain Software to you at no charge, including free accounts, trial use, and Beta Versions as defined below (collectively, “No-Charge Software”). Your use of No-Charge Software is subject to any additional terms that we specify and is only permitted during the License Term we designate (or, if not designated, until terminated in accordance with this Agreement). Except as otherwise set forth in this Section, the terms and conditions of this Agreement governing Software, including Section 3.2 (Restrictions), fully apply to No-Charge Software.  We may terminate your right to use No-Charge Software at any time and for any reason in our sole discretion, without liability to you. You understand that any pre-release and beta versions of Software, and any pre-release and beta features within generally available Software, that we make available (collectively, “Beta Versions”) are still under development, may be inoperable or incomplete and are likely to contain more errors and bugs than generally available Software. We make no promises that any Beta Versions will ever be made generally available. We may charge a fee in order to allow you to use Beta Versions, but the Beta Versions will still remain subject to this Section 8. All information regarding the characteristics, features or performance of any No-Charge Software (including Beta Versions) constitutes Manus’s Confidential Information. To the maximum extent permitted by applicable law, we disclaim all obligations or liabilities with respect to No-Charge Software, including any Support and Maintenance, warranty, and indemnity obligations.  NOTWITHSTANDING ANYTHING ELSE IN THIS AGREEMENT, MANUS’S MAXIMUM AGGREGATE LIABILITY TO YOU IN RESPECT OF NO-CHARGE SOFTWARE WILL BE 1 EURO.
+
+
+9. Use of Manus Developer Assets. 
+
+Access to any Manus APIs, SDKs or other Manus developer assets is subject to this Agreement.
+
+
+10. License Certifications. 
+
+If you exceed the Scope of Use, we may invoice you for any past or ongoing excessive use, and you will pay the invoice promptly after receipt. This remedy is without prejudice to any other remedies available to Manus at law or equity or under this Agreement. 
+
+
+11. Ownership and Feedback. 
+
+The Software is made available on a limited license or access basis, and no ownership right is conveyed to you, irrespective of the use of terms such as “purchase” or “sale”. Manus and its licensors have and retain all right, title and interest, including all intellectual property rights, in and to Manus Technology (including the Software). You may choose to submit Feedback to us. Manus may in connection with any of its products or services freely use, copy, disclose, license, distribute and exploit any Feedback in any manner without any obligation, royalty or restriction based on intellectual property rights or otherwise. No Feedback will be considered your Confidential Information, and nothing in this Agreement limits Manus's right to independently use, develop, evaluate, or market products or services, whether incorporating Feedback or otherwise.
+
+
+12. Confidentiality. 
+
+Except as otherwise set forth in this Agreement, each party agrees that all code, inventions, know-how and business, technical and financial information disclosed to such party (“Receiving Party”) by the disclosing party (“Disclosing Party”) constitute the confidential property of the Disclosing Party (“Confidential Information”), provided that it is identified as confidential at the time of disclosure or should be reasonably known by the Receiving Party to be confidential or proprietary due to the nature of the information disclosed and the circumstances surrounding the disclosure. Any Manus Technology and any performance information relating to the Software will be deemed Confidential Information of Manus without any marking or further designation. Except as expressly authorized herein, the Receiving Party will (1) hold in confidence and not disclose any Confidential Information to third parties and (2) not use Confidential Information for any purpose other than fulfilling its obligations and exercising its rights under this Agreement.  The Receiving Party may disclose Confidential Information to its employees, agents, contractors and other representatives having a legitimate need to know, provided that they are bound to confidentiality obligations no less protective of the Disclosing Party than this Section 12 and that the Receiving Party remains responsible for compliance by them with the terms of this Section 12. The Receiving Party's confidentiality obligations will not apply to information which the Receiving Party can document: (i) was rightfully in its possession or known to it prior to receipt of the Confidential Information; (ii) is or has become public knowledge through no fault of the Receiving Party; (iii) is rightfully obtained by the Receiving Party from a third party without breach of any confidentiality obligation; or (iv) is independently developed by employees of the Receiving Party who had no access to such information. The Receiving Party may also disclose Confidential Information if so required pursuant to a regulation, law or court order (but only to the minimum extent required to comply with such regulation or order and with advance notice to the Disclosing Party). The Receiving Party acknowledges that disclosure of Confidential Information would cause substantial harm for which damages alone would not be a sufficient remedy, and therefore that upon any such disclosure by the Receiving Party the Disclosing Party will be entitled to appropriate equitable relief in addition to whatever other remedies it might have at law.
+
+
+13. Term and Termination
+
+13.1. Term. 
+This Agreement is effective as of the Effective Date and continues until expiration of all License Terms, unless earlier terminated as set forth herein.
+
+13.2. Termination for Cause. 
+Either party may terminate this Agreement (including all related Orders) if the other party (a) fails to cure any material breach of this Agreement within thirty (30) days after written notice; (b) ceases operation without a successor; or (c) seeks protection under any bankruptcy, receivership, trust deed, creditors’ arrangement, composition or comparable proceeding, or if any such proceeding is instituted against that party (and not dismissed within sixty (60) days thereafter). 
+
+13.3. Termination for Convenience. 
+You may choose to stop using the Software and terminate this Agreement (including all Orders) at any time for any reason upon written notice to Manus, but upon any such termination (i) you will not be entitled to a refund of any pre-paid fees and (ii) if you have not already paid all applicable fees for the then-current License Term or related services period (as applicable), any such fees that are outstanding will become immediately due and payable.
+
+13.4. Effects of Termination. 
+Upon any expiration or termination of this Agreement, your license to the Software terminates (even if the License Term is identified as “perpetual” or if no expiration date is specified in your Order) and you must cease using and delete (or at our request, return) all Software and Confidential Information or other materials of Manus in your possession, including on any third-party systems operated on your behalf.  You will certify such deletion upon our request. If this Agreement is terminated by Manus in accordance with Section 13.2 (Termination for Cause), you will pay any unpaid fees covering the remainder of the then-current License Term after the effective date of termination. In no event will termination relieve you of its obligation to pay any fees payable to Manus for the period prior to the effective date of termination. Except where an exclusive remedy may be specified in this Agreement, the exercise by either party of any remedy, including termination, will be without prejudice to any other remedies it may have under this Agreement, by law, or otherwise.
+
+13.5. Survival. 
+The following Sections will survive any termination or expiration of this Agreement: 3.2 (Restrictions), 3.8 (Indemnification by You), 4.1 (Third Party Products), 7.5 (Payment), 7.6 (Taxes), 8 (No-Charge Software) (disclaimers and use restrictions only), 10 (License Certifications and Audits), 11 (Ownership and Feedback), 12 (Confidentiality), 13 (Term and Termination), 14.3 (Warranty Disclaimer), 15 (Limitations of Liability), 16 (IP Indemnification by Manus) (but solely with respect to claims arising from your use of the Software during the License Term), 18 (Dispute Resolution), 19 (Export Restrictions), and 22 (General Provisions).
+
+
+14. Warranties and Disclaimer
+
+14.1. General Warranties. 
+Each party represents and warrants that it has the legal power and authority to enter into this Agreement.  If you are an entity, you represent and warrant that this Agreement and each Order is entered into by an employee or agent of such entity with all necessary authority to bind such entity to the terms and conditions of this Agreement.
+
+14.2. Virus Warranty. 
+Manus further represents and warrants that it will take reasonable commercial efforts to ensure that the Software, in the form and when provided to you, will be free of any viruses, malware, or other harmful code.  For any breach of the foregoing warranty, your sole and exclusive remedy, and Manus’s sole obligation, is to provide a replacement copy of the Software promptly upon notice.
+
+14.3. Warranty Disclaimer. 
+EXCEPT AS EXPRESSLY SET FORTH IN SECTION 14.1 (GENERAL WARRANTIES) AND 14.2 (VIRUS WARRANTY), ALL SOFTWARE, SUPPORT AND MAINTENANCE AND ANY ADDITIONAL SERVICES ARE PROVIDED “AS IS,” AND MANUS AND ITS SUPPLIERS EXPRESSLY DISCLAIM ANY AND ALL WARRANTIES AND REPRESENTATIONS OF ANY KIND, INCLUDING ANY WARRANTY OF NON-INFRINGEMENT, TITLE, FITNESS FOR A PARTICULAR PURPOSE, FUNCTIONALITY, OR MERCHANTABILITY, WHETHER EXPRESS, IMPLIED, OR STATUTORY. MANUS WILL NOT BE LIABLE FOR DELAYS, INTERRUPTIONS, SERVICE FAILURES OR OTHER PROBLEMS INHERENT IN USE OF THE INTERNET AND ELECTRONIC COMMUNICATIONS OR OTHER SYSTEMS OUTSIDE THE REASONABLE CONTROL OF MANUS. TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEITHER MANUS NOR ANY OF ITS THIRD PARTY SUPPLIERS MAKES ANY REPRESENTATION, WARRANTY OR GUARANTEE AS TO THE RELIABILITY, TIMELINESS, QUALITY, SUITABILITY, TRUTH, AVAILABILITY, ACCURACY OR COMPLETENESS OF ANY SOFTWARE OR ANY CONTENT THEREIN OR GENERATED THEREWITH, OR THAT: (A) THE USE OF ANY SOFTWARE WILL BE SECURE, TIMELY, UNINTERRUPTED OR ERROR-FREE; (B) THE SOFTWARE WILL OPERATE IN COMBINATION WITH ANY OTHER HARDWARE, SOFTWARE, SYSTEM, OR DATA; (C) THE SOFTWARE (OR ANY PRODUCTS, SERVICES, INFORMATION, OR OTHER MATERIAL PURCHASED OR OBTAINED BY YOU THROUGH THE SOFTWARE) WILL MEET YOUR REQUIREMENTS OR EXPECTATIONS); (D) ERRORS OR DEFECTS WILL BE CORRECTED; OR (E) EXCEPT AS EXPRESSLY SET FORTH IN SECTION 14.2 (VIRUS WARRANTY), THE SOFTWARE IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.  YOU MAY HAVE OTHER STATUTORY RIGHTS, BUT THE DURATION OF STATUTORILY REQUIRED WARRANTIES, IF ANY, WILL BE LIMITED TO THE SHORTEST PERIOD PERMITTED BY LAW.
+
+
+15. Limitations of Liability
+
+15.1. Consequential Damages Waiver. 
+EXCEPT FOR EXCLUDED CLAIMS (DEFINED BELOW), NEITHER PARTY (NOR ITS SUPPLIERS) WILL HAVE ANY LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT FOR ANY LOSS OF USE, LOST OR INACCURATE DATA, LOST PROFITS, FAILURE OF SECURITY MECHANISMS, INTERRUPTION OF BUSINESS, COSTS OF DELAY OR ANY INDIRECT, SPECIAL, INCIDENTAL, RELIANCE OR CONSEQUENTIAL DAMAGES OF ANY KIND, EVEN IF INFORMED OF THE POSSIBILITY OF SUCH DAMAGES IN ADVANCE.
+
+15.2. Liability Cap. 
+EXCEPT FOR EXCLUDED CLAIMS, EACH PARTY’S AND ITS SUPPLIERS’ AGGREGATE LIABILITY TO THE OTHER ARISING OUT OF OR RELATED TO THIS AGREEMENT WILL NOT EXCEED THE AMOUNT ACTUALLY PAID OR PAYABLE BY YOU TO US UNDER THIS AGREEMENT IN THE TWELVE (12) MONTHS IMMEDIATELY PRECEDING THE CLAIM.
+
+15.3. Excluded Claims. 
+“Excluded Claims” means (1) amounts owed by you under any Orders, (2) either party’s express indemnification obligations in this Agreement, and (3) your breach of Section 3.2 (Restrictions).
+
+15.4. Nature of Claims and Failure of Essential Purpose. 
+The parties agree that the waivers and limitations specified in this Section 15 (Limitations of Liability) apply regardless of the form of action, whether in contract, tort (including negligence), strict liability or otherwise and will survive and apply even if any limited remedy specified in this Agreement is found to have failed of its essential purpose.
+
+
+16. Indemnification. 
+
+YOU AGREE TO INDEMNIFY AND HOLD MANUS, ITS AFFILIATES, OFFICERS, EMPLOYEES, AGENTS, CONSULTANTS AND ADVISERS, HARMLESS FROM ANY AND ALL CLAIMS, INCLUDING BUT NOT LIMITED TO DAMAGES, LEGAL FEES, COST AND EXPENSES, FROM THIRD PARTIES ARISING IN CONNECTION WITH THE SOFTWARE.
+
+
+17. Publicity Rights. 
+
+We may identify you as a Manus customer in our promotional materials. We will promptly stop doing so upon your request sent to sales@manus-vr.com.
+
+
+18. Dispute Resolution
+
+18.1. Informal Resolution. 
+In the event of any controversy or claim arising out of or relating to this Agreement, the parties will consult and negotiate with each other and, recognizing their mutual interests, attempt to reach a solution satisfactory to both parties. If the parties do not reach settlement within a period of sixty (60) days, either party may pursue relief as may be available under this Agreement pursuant to Section 18.2 (Governing Law; Jurisdiction). All negotiations pursuant to this Section 18.1 will be confidential and treated as compromise and settlement negotiations for purposes of all rules and codes of evidence of applicable legislation and jurisdictions.
+
+18.2. Governing Law; Jurisdiction. 
+This Agreement will be governed by and construed in accordance with the applicable laws of the Netherlands. Each party irrevocably agrees that any legal action, suit or proceeding arising out of or related to this Agreement must be brought solely and exclusively in, and will be subject to the service of process and other applicable procedural rules of, the Netherlands, and each party irrevocably submits to the sole and exclusive personal jurisdiction of the courts in the Netherlands generally and unconditionally, with respect to any action, suit or proceeding brought by it or against it by the other party. In any action or proceeding to enforce a party’s rights under this Agreement, the prevailing party will be entitled to recover its reasonable costs and attorneys’ fees.
+
+18.3. Injunctive Relief; Enforcement. 
+Notwithstanding the provisions of Section 18.1 (Informal Resolution) and Section 18.2 (Governing Law; Jurisdiction), nothing in this Agreement will prevent Manus from seeking injunctive relief with respect to a violation of intellectual property rights, confidentiality obligations or enforcement or recognition of any award or order in any appropriate jurisdiction.
+
+18.4. Exclusion of UN Convention and UCITA. 
+The terms of the United Nations Convention on Contracts for the Sale of Goods do not apply to this Agreement. The Uniform Computer Information Transactions Act (UCITA) will not apply to this Agreement regardless of when or where adopted.
+
+
+19. Third Party Code. 
+
+The Software may include code and libraries licensed to us by third parties, including open source software. See Third Party Code in Manus Products for additional provisions regarding our use of third party code.
+
+
+20. Changes to this Agreement.
+
+20.1. Modifications Generally. 
+We may modify the terms and conditions of this Agreement (including Manus Policies) from time to time, with notice given to you by email, through the Software or through our website.  Together with notice, we will specify the effective date of the modifications.
+No-Charge Software:  You must accept the modifications to continue using the No-Charge Software.  If you object to the modifications, your exclusive remedy is to cease using the No-Charge Software.
+Paid Licenses: When we make modifications to the main body of this Agreement (excluding the Manus Policies), the modifications will take effect at the next renewal of your License Term and will automatically apply as of the renewal date unless you elect not to renew pursuant to Section 7.1 (License Term and Renewals).  
+Manus Policies:  Our products and business are constantly evolving, and we may modify the Manus Policies, including during your then-current License Term in order to respond to changes in our products, our business, or Laws. In this case, unless required by laws, we agree not to make modifications to the Manus Policies that, considered as a whole, would substantially diminish our obligations during your then-current License Term. Modifications to the Manus Policies will take effect automatically as of the effective date specified for the updated policies.
+
+
+21. General Provisions
+
+21.1. Notices.
+ Any notice under this Agreement must be given in writing. We may provide notice to you via email or through your account. You agree that any such electronic communication will satisfy any applicable legal communication requirements, including that such communications be in writing. Our notices to you will be deemed given upon the first business day after we send it. You will provide notice to us by email support@manus-vr.com. Your notices to us will be deemed given upon our receipt.
+ 
+21.2. Force Majeure. 
+Neither party will be liable to the other for any delay or failure to perform any obligation under this Agreement (except for a failure to pay fees) if the delay or failure is due to events which are beyond the reasonable control of such party, such as a strike, blockade, war, act of terrorism, riot, natural disaster, failure or diminishment of power or telecommunications or data networks or services, or refusal of a license by a government agency.
+
+21.3. Assignment. 
+You may not assign or transfer this Agreement without our prior written consent. As an exception to the foregoing, you may assign this Agreement in its entirety (including all Orders) to your successor resulting from your merger, acquisition, or sale of all or substantially all of your assets or voting securities, provided that you provide us with prompt written notice of the assignment and the assignee agrees in writing to assume all of your obligations under this Agreement. Any attempt by you to transfer or assign this Agreement except as expressly authorized above will be null and void. We may assign our rights and obligations under this Agreement (in whole or in part) without your consent. We may also permit our Affiliates, agents and contractors to exercise our rights or perform our obligations under this Agreement, in which case we will remain responsible for their compliance with this Agreement.  Subject to the foregoing, this Agreement will inure the parties’ permitted successors and assigns.
+
+21.4. Entire Agreement. 
+This Agreement is the entire agreement between you and Manus relating to the Software and supersedes all prior or contemporaneous oral or written communications, proposals and representations between you and Manus with respect to the Software or any other subject matter covered by this Agreement.  No provision of any purchase order or other business form employed by you will supersede or supplement the terms and conditions of this Agreement, and any such document relating to this Agreement will be for administrative purposes only and will have no legal effect.
+
+21.6. Conflicts. 
+In event of any conflict between the main body of this Agreement and either the Manus Policies or Product-Specific Terms, the Manus Policies or Product-Specific Terms (as applicable) will control with respect to their subject matter.
+
+21.7. Waivers; Modifications. 
+No failure or delay by the injured party to this Agreement in exercising any right, power or privilege hereunder will operate as a waiver thereof, nor will any single or partial exercise thereof preclude any other or further exercise thereof or the exercise of any right, power or privilege hereunder at law or equity. Except as set forth in Section 20 (Changes to this Agreement), any amendments or modifications to this Agreement must be executed in writing by the authorized representatives of Manus and you.
+
+21.9. Independent Contractors. 
+The parties are independent contractors. This Agreement will not be construed as constituting either party as a partner of the other or to create any other form of legal association that would give either party the express or implied right, power or authority to create any duty or obligation of the other party.
+
+
+22. Definitions. 
+
+Certain terms are defined in this Section 22, and others are defined contextually in this Agreement.
+“Additional Services” means Technical services, Support and Maintenance or other services related to the Software provided to you by Manus, as identified in an Order. 
+
+“Affiliate” means an entity which, directly or indirectly, owns or controls, is owned or is controlled by or is under common ownership or control with a party, where “control” means the power to direct the management or affairs of an entity, and “ownership” means the beneficial ownership of greater than 50% of the voting equity securities or other equivalent voting interests of the entity.
+
+“Manus Policies” means Manus’s General Provision, Privacy Policy, Support Policy, Warranty Policy, terms for Third Party Code in Manus Products, and (unless otherwise specified) any other policies or terms referenced in this Agreement.
+
+“Manus Technology” means the Software (including all No-Charge Software), Manus Deliverables, their “look and feel”, any and all related or underlying technology and any modifications or derivative works of the foregoing, including as they may incorporate Feedback.
+
+“Authorized Users” means the specific individuals whom you designate to use the applicable Software and for whom you have paid the required fees.  Authorized Users may be your or your Affiliates’ employees, representatives, consultants, contractors, agents or other third parties who are acting for your or your Affiliates’ benefit or on your or your Affiliates’ behalf.  Authorized Users also include any Secondary Users that you permit to use the Software, subject to Section 2.3 (Secondary Users).
+
+“Documentation” means our standard published documentation for the Software, currently located at https://documentation.manus-vr.com
+
+“Feedback” means comments, questions, ideas, suggestions or other feedback relating to the Software, Support and Maintenance or Additional Services.
+
+“Laws” means all applicable local, state, federal and international laws, regulations and conventions, including those related to data privacy and data transfer, international communications and the exportation of technical or personal data.
+
+“License Term” means your permitted license term for the Software, as set forth in an Order.
+
+“New Releases” means any bug fixes, patches, major or minor releases, or any other changes, enhancements, or modifications to the Software that Manus makes available to you as part of Support and Maintenance.
+
+“Order” means Manus’s applicable ordering documentation or other purchase flow referencing this Agreement.  Orders may include purchases of Software licenses, Support and Maintenance, Additional Services, increased or upgraded Scope of Use or renewals.
+
+“Product-Specific Terms” means additional terms that apply to certain Software and Additional Services.
+
+“Scope of Use” means your authorized scope of use for the Software as specified in the applicable Order, which may include: (a) number and type of Authorized Users, (b) numbers of licenses, copies or instances, or (c) entity, division, business unit, website, field of use or other restrictions or billable units.
+
+“Software” means Manus’s commercially available downloadable software products (currently designated as “Server” or “Data Center” deployments), including mobile applications of such products.  Your Order will specify the Software that you may use.
+
+“Support and Maintenance” means Manus’s support and maintenance services for the Software, as further described in the Manus Support Policy.  Your level of Support and Maintenance will be specified in your Order.
+
+“Training” means Manus-provided training and certification services.
+

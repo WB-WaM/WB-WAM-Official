@@ -1,0 +1,6 @@
+# CPU-only export/validation. No robot SDK, torch, model weights or datasets code.
+numpy==1.26.4
+pandas==2.3.3
+pyarrow==24.0.0
+av==16.0.1
+Pillow==12.2.0

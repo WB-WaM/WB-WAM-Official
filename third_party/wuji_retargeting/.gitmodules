@@ -1,0 +1,6 @@
+[submodule "example/utils/mujoco-sim"]
+	path = example/utils/mujoco-sim
+	url = https://github.com/wuji-technology/mujoco-sim
+[submodule "wuji_retargeting/wuji-description"]
+	path = wuji_retargeting/wuji-description
+	url = https://github.com/wuji-technology/wuji-description

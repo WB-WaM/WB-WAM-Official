@@ -1,0 +1,3 @@
+
+2025-07-28 09:26:12 : SDKMinimalClient_Windows.exe : DEBUG : ManusInit: creating DeviceManager and CCallbacks
+2025-07-28 09:26:12 : SDKMinimalClient_Windows.exe : DEBUG : ManusInit: finished successful

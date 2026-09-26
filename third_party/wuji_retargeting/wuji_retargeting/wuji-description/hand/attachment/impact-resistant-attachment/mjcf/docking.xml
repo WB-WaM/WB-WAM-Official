@@ -1,0 +1,25 @@
+<mujoco model="docking">
+
+  <option gravity="0 0 -9.81" timestep="0.001"/>
+
+  <default>
+    <geom friction="0.8 0.02 0.01" condim="4" rgba="0.79 0.82 0.93 1"/>
+  </default>
+
+  <asset>
+    <mesh name="docking_mesh" file="../meshes/hand_docking_link.STL"/>
+  </asset>
+
+  <worldbody>
+    <body name="hand_docking_link" pos="0 0 0">
+      <inertial pos="0.0 0.000613 0.008094"
+                mass="0.051956000"
+                fullinertia="1.814727e-05 1.736668e-05 1.920788e-05 -2.035277e-10 8.570371e-11 -4.906137e-07"/>
+      <geom type="mesh" mesh="docking_mesh" contype="0" conaffinity="0"/>
+      <geom type="mesh" mesh="docking_mesh" contype="1" conaffinity="1"
+            rgba="0.79 0.82 0.93 0"/>
+      <site name="origin" pos="0 0 0" size="0.001"/>
+    </body>
+  </worldbody>
+
+</mujoco>

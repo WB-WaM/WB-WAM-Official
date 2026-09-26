@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="wuji-description-docking">
+  <link name="hand_docking_link">
+    <inertial>
+      <origin xyz="0.0 0.000613 0.008094" rpy="0 0 0" />
+      <mass value="0.051956" />
+      <inertia ixx="1.814727e-05" ixy="-2.035277e-10" ixz="8.570371e-11" iyy="1.736668e-05" iyz="-4.906137e-07" izz="1.920788e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/hand_docking_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/hand_docking_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

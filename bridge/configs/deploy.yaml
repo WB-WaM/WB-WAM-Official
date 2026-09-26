@@ -1,0 +1,85 @@
+# One deployment entrypoint for pre/mid/post-trained WB-WAM checkpoints.
+# Paths are relative to the repository root, or absolute. Use matching weights,
+# resolved training config and normalization stats from the same checkpoint release.
+policy:
+  adapter: wbwam
+  checkpoint_path: ${WBWAM_BRIDGE_CHECKPOINT_PATH}
+  # null discovers metadata/config.yaml and metadata/dataset_stats.json beside weights/.
+  config_path: null
+  dataset_stats_path: null
+  output_representation: absolute
+  inference_mode: wbwam           # wbwam: first-frame action; idm: video then action
+  device: cuda:0
+  mixed_precision: bf16
+  num_inference_steps: 20
+  seed: 42                        # match the previous deployment; fixed noise on each call
+  compile_action_infer: false
+  # null selects by prompt hash; cache misses run UMT5 before loading WB-WAM.
+  prompt_embedding_path: null
+  deployment_text_embedding_cache_dir: ${WBWAM_BRIDGE_TEXT_CACHE_DIR}
+  # null uses the saved config's real-robot archive descriptions.
+  # For older configs, fill these with the exact descriptions used in training.
+  visual_description: The video is recorded from the point of view of a Unitree G1 robot using its primary camera and may show the robot's arms and two Wuji dexterous hands.
+  control_description: The predicted motion controls the Unitree G1 body using twenty-nine body joint positions plus root roll, root pitch, and yaw angular velocity, and two Wuji dexterous hands using twenty joint positions per side.
+
+task:
+  prompt: Push the chair or cart forward.
+
+wam_input:
+  state_layout: gravity
+  image_mode: rgb
+  base_state_dim: 107
+  expected_state_dim: 107
+  rgb_size: [224, 224]             # must match training data.video_size
+
+sonic_action:
+  encoder_model: ${WBWAM_BRIDGE_ENCODER_MODEL}
+  encoder_providers: [CPUExecutionProvider]
+  dynamic_encoder_providers: [CPUExecutionProvider]
+  root_orientation_mode: actual_imu
+  timestep_s: 0.05
+  future_dt_s: 0.1
+  project_model_state: true
+  relative_hands: false
+  snap_fsq_grid: true
+
+runtime:
+  observation_time_alignment: true
+  observation_alignment_max_skew_ms: 25.0
+  observation_alignment_timeout_s: 5.0
+  camera_endpoint: ${WBWAM_BRIDGE_CAMERA_ENDPOINT}
+  camera_key: ${WBWAM_BRIDGE_CAMERA_KEY}
+  select_camera_on_start: false
+  state_action_endpoint: ${WBWAM_BRIDGE_STATE_ACTION_ENDPOINT}
+  hand_status_endpoint: ${WBWAM_BRIDGE_HAND_STATUS_ENDPOINT}
+  hand_status_timeout_s: 5.0
+  require_hand_actual: true
+  pose_port: 5556
+  publisher_warmup_s: 0.5
+  action_publish_rate_hz: 20.0
+  chunk_schedule: sequential
+  execute_chunk_steps: 20
+  inference_rate_hz: 2.5
+  chunk_start_strategy: zero
+  max_chunk_hold_steps: 10
+  chunk_stale_warn_s: 2.0
+  inference_warn_ratio: 0.8
+  rtc_mode: 'off'
+  send_initial_pose_on_start: true
+  initial_pose_repeat: 20
+  initial_pose_rate_hz: 10.0
+  return_initial_pose_repeat: 45
+  return_initial_pose_rate_hz: 30.0
+  start_in_planner: true
+  planner_idle_rate_hz: 2.0
+  prompt_interactive: false
+  prepare_key: '4'
+  execute_key: '1'
+  estop_key: e
+  quit_key: q
+  enable_keyboard_estop: true
+  open_hands_on_estop: false
+  max_abs_token: 1.25
+  snap_token_grid: true
+  hand_qpos_max_delta_per_frame: 0.06
+  metrics_log_interval_s: 1.0

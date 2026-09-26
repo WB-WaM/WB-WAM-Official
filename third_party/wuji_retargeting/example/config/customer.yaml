@@ -1,0 +1,55 @@
+# AdaptiveOptimizerAnalytical Configuration for Pico OpenXR hand tracking
+# Adaptive blend: TipDirVec when pinching, FullHandVec otherwise
+# Loss: L = Σ (α_i * L_tip_dir_vec_i + (1-α_i) * L_full_hand_i) + norm_delta * ||Δq||²
+# Uses Huber loss + analytical gradients + NLopt SLSQP
+#
+# Pico source coord: OpenXR world space (Y-up, -Z forward, right-handed, meters).
+# Very close to AVP; start with AVP baseline and tune mediapipe_rotation as needed.
+
+optimizer:
+  type: "AdaptiveOptimizerAnalytical"
+
+retarget:
+  # Huber loss thresholds
+  huber_delta: 2.0             # Position Huber threshold (cm)
+  huber_delta_dir: 0.5         # Direction Huber threshold
+
+  # Regularization
+  norm_delta: 0.04             # Velocity regularization weight
+
+  # TipDirVec parameters
+  w_pos: 1.0                   # Tip position weight (wrist → tip vectors)
+  w_dir: 10.0                  # Tip direction weight (link4 → tip vectors)
+  scaling: 1.0                 # Global MediaPipe scaling parameter
+  project_tip_dir: false       # Whether to project tip direction
+
+  # FullHandVec parameters
+  w_full_hand: 1.0             # Full hand vec weight
+  segment_scaling:
+    thumb:  [1.2, 1.2, 1.13]
+    index:  [1.12, 1.15, 1.15]
+    middle: [1.04, 1.07, 1.03]
+    ring:   [1.05, 1.10, 1.10]
+    pinky:  [1.14, 1.22, 1.22]
+
+  # Pinch distance thresholds (cm) for each finger
+  # d < d1: TipDirVec mode (α=1), d > d2: FullHandVec mode (α=0)
+  pinch_thresholds:
+    index:  { d1: 2.0, d2: 4.0 }
+    middle: { d1: 2.0, d2: 4.0 }
+    ring:   { d1: 2.0, d2: 4.0 }
+    pinky:  { d1: 2.0, d2: 4.0 }
+
+  # MediaPipe rotation adjustment (degrees).
+  # Pico OpenXR world frame already matches the retargeter's expectation;
+  # start at 0 and tune via tuning_tool.py if the hand orientation looks off.
+  mediapipe_rotation:
+    x: -5.0
+    y: -5.0
+    z: 0.0
+
+render:
+  camera:
+    azimuth: 135
+    elevation: -20
+    distance: 0.5

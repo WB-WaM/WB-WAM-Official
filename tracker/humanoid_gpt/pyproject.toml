@@ -1,0 +1,91 @@
+[build-system]
+requires = ["setuptools>=75.8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Humanoid-GPT"
+version = "0.1.0"
+readme = "README.md"
+license = {text = "Apache License 2.0"}
+authors = [{name = "Zekun Qi", email = "qizekun@gmail.com"}]
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "numpy==2.3.4", "scipy>=1.13", "warp_lang==1.9.0",
+    "mujoco==3.3.7", "mujoco-mjx==3.3.7",
+    "jax==0.8.0", "flax==0.12.0", "jaxlie",
+    "torch==2.8.0", "ml_collections",
+    "dm_tree", "pygame", "tyro", "tqdm",
+    "loop_rate_limiters", "colorlog", "pillow",
+    "opencv-python==4.11.0.86", "imageio", "imageio-ffmpeg",
+]
+
+[project.optional-dependencies]
+cuda = [
+    "jax-cuda12-plugin==0.8.0", "onnxruntime-gpu<1.24",
+    "scikit-learn", "pandas", "matplotlib",
+    "gradio==6.11.0", "ipdb", "httpx[socks]", "PyOpenGL-accelerate",
+]
+cpu = [
+    "onnxruntime<1.24",
+    "scikit-learn", "pandas", "matplotlib",
+    "gradio==6.11.0", "ipdb", "httpx[socks]", "PyOpenGL-accelerate",
+]
+pico = [
+    "cmake>=3.16",
+    "nlopt",
+    "pin>=3.8.0",
+    "pyyaml",
+    "pyzmq>=25",
+    "mink",
+    "natsort",
+    "protobuf",
+    "psutil",
+    "pybind11>=2.10",
+    "qpsolvers[proxqp]",
+    "redis[hiredis]",
+    "rich",
+    "smplx",
+]
+dev = [
+    "pytest>=8",
+    "ruff>=0.9",
+]
+
+[tool.setuptools]
+packages = ["scripts", "tracking", "utils", "deploy", "projects"]
+
+[tool.ruff]
+line-length = 88  # Matches Black's default
+indent-width = 4
+target-version = "py312"
+
+# Enable Ruff's linter, formatter, and import sorter
+lint.select = [
+    "E", # pycodestyle errors
+    "F", # pyflakes
+    "I", # isort
+    "UP", # pyupgrade
+    "B", # flake8-bugbear
+    "SIM", # flake8-simplify
+    "C4", # flake8-comprehensions
+    "TID", # flake8-tidy-imports
+]
+lint.ignore = [
+    "E501", # Line length (handled by formatter)
+]
+lint.fixable = ["ALL"]
+lint.unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"      # Prefer double quotes
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-single-line = false
+known-first-party = ["Humanoid-GPT"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

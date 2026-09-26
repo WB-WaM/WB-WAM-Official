@@ -1,0 +1,270 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python packaging/build artifacts
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.manifest
+*.spec
+
+# Test, coverage, and static-analysis caches
+.cache/
+.coverage
+.coverage.*
+.hypothesis/
+.mypy_cache/
+.nox/
+.pytest_cache/
+.ruff_cache/
+.tox/
+.pyre/
+.pytype/
+.dmypy.json
+dmypy.json
+htmlcov/
+cover/
+coverage.xml
+nosetests.xml
+*.cover
+*.py,cover
+cython_debug/
+
+# Python environment managers
+.pdm.toml
+.pdm-python
+.pdm-build/
+__pypackages__/
+uv.lock
+
+# Local virtual environments
+.venv/
+.venv*/
+.venv_*/
+env/
+venv/
+ENV/
+bridge/.venv-pi05/
+bridge/.venv-wam/
+bridge/.env
+collector/sonic/scripts/collector_pc.env
+collector/sonic/scripts/camera_server.env
+collector/sonic/scripts/wuji_hand_server.env
+collector/humanoid_gpt/scripts/hgpt_collection.env
+!scripts/
+!scripts/env/
+!scripts/env/**
+
+# IDE, editor, and OS files
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+
+# Runtime logs and local outputs
+*.log
+MUJOCO_LOG.TXT
+outputs/
+runs/
+wandb/
+logs_rl/
+logs_eval/
+profile_default/
+ipython_config.py
+.ipynb_checkpoints/
+logs/
+
+# Generic build output directories
+target/
+models/
+!training/src/wbwam/models/
+instance/
+.webassets-cache
+.scrapy/
+.pybuilder/
+/site/
+
+# Model weights, checkpoints, and compiled inference artifacts
+/checkpoints/
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.engine
+*.bin
+*.gguf
+
+# SONIC ships these small ONNX policies as source assets.
+!tracker/sonic/decoupled_wbc/sim2mujoco/resources/robots/g1/policy/GR00T-WholeBodyControl-Balance.onnx
+!tracker/sonic/decoupled_wbc/sim2mujoco/resources/robots/g1/policy/GR00T-WholeBodyControl-Walk.onnx
+
+# Legacy/local collector dataset artifacts after the WB-WAM reorg
+collector/sonic/datasets/
+collector/sonic/lerobot_datasets/
+collector/sonic/datasets_pick_doll.zip
+collector/sonic/pick_the_napkin_and_place_into_white_box_0520.tar.gz
+
+# WBWAM local training/evaluation outputs and download caches
+training/checkpoints/
+training/runs/
+training/wandb/
+training/eval/
+training/evaluate_results/
+training/.hfd/
+training/data/text_embeds_cache/
+
+# Downloaded datasets/assets and private upload helpers
+huggingface/
+sample_data/
+sonic_release/
+/data/motion_lib_bones_seed/
+
+# Third-party local caches/build products
+**/.hfd/
+external_dependencies/isaac_teleop_app/isaac-deploy/
+external_dependencies/doc/
+external_dependencies/XRoboToolkit-PC-Service-Pybind/
+xrobotoolkit_sdk.cpython-*-*-*.so
+teleop_vids/
+
+# Large robot/media/data dumps
+*.bag
+*.db3
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.parquet
+*.hdf5
+*.h5
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Local app/framework files that should not enter the repo
+celerybeat-schedule
+celerybeat.pid
+db.sqlite3
+db.sqlite3-journal
+local_settings.py
+.pypirc
+pip-log.txt
+pip-delete-this-directory.txt
+*.sage.py
+
+# Local datasets and historical preprocessing; maintained exporters live in collector/.
+/datasets/
+
+# Local dataset/run roots and WBWAM generated data. These paths are large,
+# machine-specific, or symlinked to GPFS and should not be added accidentally.
+/runs
+/runs/
+/training/datasets
+/training/datasets/
+/training/runs
+/training/runs/
+/training/data
+/training/data/
+/training/text_embeds_cache
+/training/text_embeds_cache/
+
+# Generated SONIC conversion outputs and local analysis reports
+/tracker/humanoid_gpt/reports/downsampling_replay_analysis/
+*.orig
+
+# Local debug and report outputs
+/.debug
+/reports
+
+# Local agent task traces
+/.claude/
+**/.claude/
+
+# Local agent instructions
+AGENTS.md
+CLAUDE.md
+agents.md
+claude.md
+
+# Shared repository instructions
+!/AGENTS.md
+
+# Local SONIC native builds
+/tracker/sonic/.deps/
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/tools.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/framework/__init__.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/framework/base_framework.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/framework/M1.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/framework/share_tools.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/action_model/__init__.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/action_model/DiTActionHeader.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/action_model/DiT_modules/diffusion_utils.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/action_model/DiT_modules/gaussian_diffusion.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/action_model/DiT_modules/models.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/action_model/DiT_modules/respace.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/action_model/DiT_modules/timestep_sampler.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/dino_model/dino_transforms.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/dino_model/dino.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/projector/__init__.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/projector/QFormer.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/vlm/__init__.py
+vla_baseline/psi0/src/InternVLA-M1/InternVLA/model/modules/vlm/QWen2_5.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/__init__.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/apply_delta.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/builder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/configuration_llava.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/consolidate.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/llava_arch.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/loss.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/make_delta.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/ego_vla_decoder/__init__.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/ego_vla_decoder/builder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/ego_vla_decoder/traj_decoder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/ego_vla_decoder/transformer.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/ego_vla_decoder/vae.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/language_model/builder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/language_model/geodesic_loss.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/language_model/llava_llama.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/language_model/rotation_convert.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/language_model/chat_templates/mistral.jinja
+vla_baseline/psi0/src/egovla/VILA/llava/model/language_model/chat_templates/qwen2.jinja
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/builder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/clip_encoder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/image_processor.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/intern_encoder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/radio_encoder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/radio_torchhub_encoder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/siglip_encoder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/vision_encoder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/visualize_features.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/intern/configuration_intern_vit.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/intern/flash_attention.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/intern/modeling_intern_vit.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/siglip/__init__.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_encoder/siglip/modeling_siglip.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_projector/base_projector.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/multimodal_projector/builder.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/utils/__init__.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/utils/packing.py
+vla_baseline/psi0/src/egovla/VILA/llava/model/utils/utils.py
+
+# Robot-local head servo configuration and native build products
+/collector/sonic/scripts/head_servo.env
+/collector/sonic/head/build/

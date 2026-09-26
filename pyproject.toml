@@ -1,0 +1,93 @@
+# Root pyproject.toml - WB-WAM tooling configuration only.
+# To install packages, use:
+#   pip install -e tracker/sonic/decoupled_wbc/        (or decoupled_wbc[full], decoupled_wbc[dev])
+#   pip install -e tracker/sonic/gear_sonic/           (or gear_sonic[teleop], gear_sonic[sim])
+#   pip install -e training/
+#   pip install -e third_party/wuji_retargeting/
+
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+exclude = '''
+(
+      __pycache__
+    | \.git
+    | \.mypy_cache
+    | \.pytest_cache
+    | \.vscode
+    | \.venv
+    | \bdist\b
+    | \bdoc\b
+    | tracker/sonic/external_dependencies
+    | third_party
+    | logs
+    | source
+)
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+skip = [
+    "tracker/sonic/external_dependencies",
+    "tracker/sonic/external_dependencies/**",
+    "third_party",
+    "third_party/**",
+]
+skip_glob = [
+    "tracker/sonic/external_dependencies/*",
+    "third_party/*",
+]
+
+[tool.pyright]
+reportPrivateImportUsage = false
+
+[tool.ruff]
+line-length = 115
+target-version = "py310"
+exclude = [
+    "tracker/sonic/gear_sonic/dexmg",
+    "tracker/sonic/external_dependencies",
+    "tracker/sonic/external_dependencies/**",
+    "third_party",
+    "third_party/**",
+    "*.ipynb",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.lint.isort]
+case-sensitive = false
+combine-as-imports = true
+force-sort-within-sections = true
+from-first = false
+single-line-exclusions = ["typing"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+[tool.mypy]
+ignore_missing_imports = true
+no_site_packages = true
+check_untyped_defs = true
+exclude = [
+    "tracker/sonic/external_dependencies",
+    "third_party",
+]
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+strict_optional = false
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tracker/sonic/decoupled_wbc/tests/",
+]
+python_classes = [
+  "Test*",
+  "*Test"
+]
+log_format = "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
+log_level = "DEBUG"
